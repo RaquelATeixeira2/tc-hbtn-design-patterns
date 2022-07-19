@@ -4,8 +4,8 @@ public class Guerreiro extends Personagem{
             int destreza) {
         super(nome, TipoPersonagem.GUERREIRO,inteligencia, forca, vigor, resistencia, destreza);
         
-        if(forca < inteligencia || forca < destreza){
-            throw new IllegalArgumentException("Atributos invalidos para GUERREIRO");
+        if(forca < inteligencia && forca < destreza){
+            throw new RuntimeException("Atributos invalidos para GUERREIRO");
         }
     }
     

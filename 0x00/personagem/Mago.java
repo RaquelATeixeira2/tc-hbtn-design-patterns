@@ -4,8 +4,8 @@ public class Mago extends Personagem{
             int destreza) {
         super(nome, TipoPersonagem.MAGO, inteligencia, forca, vigor, resistencia, destreza);
         
-        if(inteligencia < forca || inteligencia < destreza){
-            throw new IllegalArgumentException("Atributos invalidos para MAGO");
+        if (!(this.getInteligencia() > this.getForca()) || !(this.getInteligencia() > this.getDestreza())){
+            throw new RuntimeException("Atributos invalidos para MAGO");
         }
     }
 

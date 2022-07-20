@@ -5,16 +5,16 @@ public class CalculadorSalarioService {
     private CalculadorSalarioService() {
     }
     
-    private static CalculadorSalarioService instance;
+    private static CalculadorSalarioService instancia;
 
     public static CalculadorSalarioService getCalculadorSalarioService(){
 
-        if( instance == null ){
+        if( instancia == null ){
 
-            instance = new CalculadorSalarioService();
+            instancia = new CalculadorSalarioService();
         }
 
-        return instance;
+        return instancia;
     }
 
     public double calcularSalarioLiquido(double salarioBruto, double valorDescontos, double valorVendas, double percentualComissao){
@@ -23,8 +23,8 @@ public class CalculadorSalarioService {
 
     public UUID uuid = UUID.randomUUID();
 
-    public static void setInstance(CalculadorSalarioService instance) {
-        CalculadorSalarioService.instance = instance;
+    public static void setinstancia(CalculadorSalarioService instancia) {
+        CalculadorSalarioService.instancia = instancia;
     }
 
     public UUID getUuid() {

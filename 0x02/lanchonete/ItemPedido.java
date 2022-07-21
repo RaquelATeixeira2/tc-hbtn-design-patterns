@@ -1,4 +1,7 @@
-public class ItemPedido {
+import java.util.Comparator;
+
+public class ItemPedido implements Comparator<ItemPedido> {
+
     private TipoItemPedido tipo;
     private String nome;
 
@@ -6,53 +9,44 @@ public class ItemPedido {
     }
 
     public ItemPedido(TipoItemPedido tipo, String nome) {
-        this.tipo = tipo;
-        this.nome = nome;
+        setTipo(tipo);
+        setNome(nome);
     }
-    
+
     public TipoItemPedido getTipo() {
         return tipo;
     }
+
     public void setTipo(TipoItemPedido tipo) {
         this.tipo = tipo;
     }
+
     public String getNome() {
         return nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
 
     @Override
-    public String toString() {
-        return "ItemPedido [nome=" + nome + ", tipo=" + tipo + "]";
+    public int compare(ItemPedido t1, ItemPedido t2) {
+        return Integer.compare(getValue(t1.getTipo()), getValue(t2.getTipo()));
     }
 
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-        result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
-        return result;
+    int getValue(TipoItemPedido tipo) {
+        switch (tipo) {
+            case BEBIDA:
+                return 0;
+            case BRINDE:
+                return 1;
+            case BATATA:
+                return 2;
+            case LANCHE:
+                return 3;
+            default:
+                return Integer.MAX_VALUE;
+        }
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        ItemPedido other = (ItemPedido) obj;
-        if (nome == null) {
-            if (other.nome != null)
-                return false;
-        } else if (!nome.equals(other.nome))
-            return false;
-        if (tipo != other.tipo)
-            return false;
-        return true;
-    }
 }

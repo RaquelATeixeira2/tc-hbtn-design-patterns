@@ -1,4 +1,5 @@
-public class PedidoBuilder extends PedidoAbstractBuilder{
+public class PedidoBuilder extends PedidoAbstractBuilder {
+
     private Pedido pedido = new Pedido();
 
     @Override

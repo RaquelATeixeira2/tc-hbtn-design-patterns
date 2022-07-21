@@ -2,11 +2,3 @@
 
 Permite mudanças de tecnologia, sem que haja impactos na classes de domínio. Permitindo
 mais de uma tecnologia.
-
-
-Na Clean Architecture o domínio é o centro da aplicação, enquanto na hexagonal,  
-a aplicação é o centro.
-
-
-utilizar arquitetura hexagonal não vai ser a melhor opção, é preciso analisar a aplicação 
-como um todo, para poder definir qual arquitetura será utilizada.

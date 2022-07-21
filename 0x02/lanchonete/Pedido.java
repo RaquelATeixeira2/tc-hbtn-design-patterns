@@ -15,15 +15,12 @@ public class Pedido {
 
     @Override
     public String toString() {
-        StringBuilder foraDaCaixa = new StringBuilder("\tFora da Caixa:\n");
+        StringBuilder itensForaDaCaixa = new StringBuilder("\tFora da Caixa:\n");
+        StringBuilder itensDentroDaCaixa = new StringBuilder("\tDentro da Caixa:\n");
 
-        for (ItemPedido item : itensForaCaixa) {
-            foraDaCaixa.append(String.format("\t\t- %s %s\n", item.getTipo(), item.getNome()));
-        }
-        StringBuilder dentroDaCaixa = new StringBuilder("\tDentro da Caixa:\n");
-        for (ItemPedido item : itensDentroCaixa) {
-            dentroDaCaixa.append(String.format("\t\t- %s %s\n", item.getTipo(), item.getNome()));
-        }
-        return foraDaCaixa + dentroDaCaixa.toString();
+        getItensForaCaixa().stream().sorted(new ItemPedido()).forEach(itemPedido -> itensForaDaCaixa.append(String.format("\t\t- %s %s\n", itemPedido.getTipo(), itemPedido.getNome())));
+        getItensDentroCaixa().stream().sorted(new ItemPedido()).forEach(itemPedido -> itensDentroDaCaixa.append(String.format("\t\t- %s %s\n", itemPedido.getTipo(), itemPedido.getNome())));
+
+        return itensForaDaCaixa + itensDentroDaCaixa.toString();
     }
 }

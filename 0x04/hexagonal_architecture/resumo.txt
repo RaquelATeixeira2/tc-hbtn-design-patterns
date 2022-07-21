@@ -10,11 +10,11 @@ mais de uma tecnologia.
 Quais as diferenças entre Arquitetura Hexagonal e Clean Architecture ?
 
 Na Clean Architecture o domínio é o centro da aplicação, enquanto na hexagonal,  
-a aplicação é o centro. A Clean Architecture também faz o uso de DDD, e algumas camadas 
-a mais como Use cases.
+a aplicação é o centro.
 
 Na sua opinião, a Arquitetura Hexagonal pode ser utilizada em qualquer tipo de projeto ? 
 Quais informações devem ser consideradas antes de desenvolver sistemas usando esse padrão 
 de projeto ?
 
-Dependendo do tamanho do projeto, utilizar arquitetura hexagonal não vai ser a melhor opção, é preciso analisar a aplicação como um todo, para poder definir qual arquitetura será utilizada.
+utilizar arquitetura hexagonal não vai ser a melhor opção, é preciso analisar a aplicação 
+como um todo, para poder definir qual arquitetura será utilizada.
